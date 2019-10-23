@@ -3,6 +3,12 @@ LABEL maintainer "Aurélien JANVIER <dev@ajanvier.fr>"
 
 RUN apk --no-cache add wget unzip
 
+# Install application dependencies
+RUN pip install pafy \
+    feedparser \
+    toml \
+    requests-toolbelt
+
 # Create application dir
 RUN mkdir -p /app
 WORKDIR /app
