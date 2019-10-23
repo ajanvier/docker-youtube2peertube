@@ -5,7 +5,7 @@ services:
         image: ajanvier/docker2peertube
         restart: always
         environment:
-            - VIDEO_DOWNLOAD_DIR=/videos
+            - VIDEO_DOWNLOAD_DIR=/videos/
             - USE_PT_HTTP_IMPORT=false
             - DELETE_VIDEOS=false
             - POLL_FREQUENCY=180

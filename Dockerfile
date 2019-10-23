@@ -27,7 +27,7 @@ COPY run.sh /run.sh
 RUN chmod u+rwx /run.sh
 
 # Default environment variables
-ENV VIDEO_DOWNLOAD_DIR=/videos \
+ENV VIDEO_DOWNLOAD_DIR=/videos/ \
     USE_PT_HTTP_IMPORT=false \
     DELETE_VIDEOS=false \
     POLL_FREQUENCY=180 \
