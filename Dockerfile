@@ -1,6 +1,7 @@
 FROM python:3-alpine
 LABEL maintainer "Aurélien JANVIER <dev@ajanvier.fr>"
 
+# Install useful packages
 RUN apk --no-cache add wget unzip
 
 # Install application dependencies
@@ -36,5 +37,8 @@ ENV VIDEO_DOWNLOAD_DIR=/videos \
     PEERTUBE_CHANNEL_PRIVACY=1 \
     PEERTUBE_VIDEO_PREFERRED_EXTENSION=mp4 \
     PEERTUBE_VIDEO_MAX_RESOLUTION=1080
+
+# Removing useless packages
+RUN apk del wget unzip
 
 ENTRYPOINT [ "/run.sh" ]
