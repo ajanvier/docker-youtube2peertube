@@ -1,0 +1,30 @@
+# This is a TOML document
+# This document is a configuration file for YouTube2PeerTube mirror bot
+[global]
+video_download_dir = "${VIDEO_DOWNLOAD_DIR}" # must be absolute path and user writable directory
+use_pt_http_import = "${USE_PT_HTTP_IMPORT}" # Peertube supports sending HTTP links to videos instead of downloading and uploading them. Use this option if you do not want to archive videos and have limited bandwidth. Setting this to true negates delete_videos as videos will not be downloaded, and disables transcoding.
+delete_videos = "${DELETE_VIDEOS}" # Delete videos and metadata after upload to peertube, lowercase string
+poll_frequency = ${POLL_FREQUENCY} # poll frequency in minutes
+
+# For every channel, a new [channel.x] entry must be added in [channel] in sequential numerical order starting at 0
+# Each [channel] entry must have a name (does not have to mach YT channel name),
+# YT channel ID, peertube instance URL, channel, username, password.
+# If you do not wish to append tags or descriptions then leave the quotes empty for those fields.
+[channel]
+    [channel.0]
+    name = "${PEERTUBE_CHANNEL_NAME}"
+    channel_id = "${YOUTUBE_CHANNEL_ID}" # YT channel ID at the end of the url youtube.com/channel/<channel_id>
+    peertube_instance = "${PEERTUBE_INSTANCE}" # URL of peertube instance
+    peertube_channel = "${PEERTUBE_CHANNEL_NAME}" # peertube channel handle to upload video to
+    peertube_username = "${PEERTUBE_USERNAME}" # peertube username
+    peertube_password = "${PEERTUBE_PASSWORD}" # peertube password WARNING this file needs to be secure
+    pt_channel_category = "${PEERTUBE_CHANNEL_CATEGORY}" # category of channel contents. see yt_pt_languages_categories.txt for categories
+    pt_tags = "${PEERTUBE_VIDEO_TAGS}" # tags to be added to uploaded video in Peertube, comma separated, max 5, between 2 and 30 char each (incomplete)
+    default_lang = "${PEERTUBE_CHANNEL_DEFAULT_LANG}" # language of the channel, see yt_pt_languages_categories.txt for languages
+    nsfw = "${PEERTUBE_CHANNEL_NSFW}" # lowercase string, is this channel NSFW?
+    comments_enabled = "${PEERTUBE_CHANNEL_COMMENTS_ENABLED}" # lowercase string, do you want comments enabled in this channel?
+    pt_privacy = ${PEERTUBE_CHANNEL_PRIVACY} # 1 = public, 2 = unlisted, 3 = private, privacy for entire channel, default public
+    description_prefix = "${PEERTUBE_VIDEO_DESCRIPTION_PREFIX}" # This description will be added to the beginning of the YT description
+    description_suffix = "${PEERTUBE_VIDEO_DESCRIPTION_SUFFIX}" # This description will be appended to the end of the YT description
+    preferred_extension = "${PEERTUBE_VIDEO_PREFERRED_EXTENSION}" # preferred extension of download and upload
+    max_resolution = "${PEERTUBE_VIDEO_MAX_RESOLUTION}" # maximum resolution of videos to download (incomplete)
