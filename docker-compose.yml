@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    garradin:
+        image: ajanvier/docker2peertube
+        restart: always
+        environment:
+            - VIDEO_DOWNLOAD_DIR=/videos
+            - USE_PT_HTTP_IMPORT=false
+            - DELETE_VIDEOS=false
+            - POLL_FREQUENCY=180
+            - YOUTUBE_CHANNEL_ID=example
+            - PEERTUBE_CHANNEL_NAME=example
+            - PEERTUBE_INSTANCE=https://peertube.example.com
+            - PEERTUBE_USERNAME=example
+            - PEERTUBE_PASSWORD=example
+            - PEERTUBE_CHANNEL_CATEGORY=10
+            - PEERTUBE_CHANNEL_DEFAULT_LANG=en
+            - PEERTUBE_CHANNEL_NSFW=false
+            - PEERTUBE_CHANNEL_COMMENTS_ENABLED=true
+            - PEERTUBE_CHANNEL_PRIVACY=1
+            - PEERTUBE_VIDEO_PREFERRED_EXTENSION=mp4
+            - PEERTUBE_VIDEO_MAX_RESOLUTION=1080
+            # - PEERTUBE_VIDEO_DESCRIPTION_PREFIX=
+            # - PEERTUBE_VIDEO_DESCRIPTION_SUFFIX=
+            # - PEERTUBE_VIDEO_TAGS=
+        # volumes:
+        #     - ./config.toml:/app/config.toml
