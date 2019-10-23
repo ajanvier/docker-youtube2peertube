@@ -8,7 +8,8 @@ RUN apk --no-cache add wget unzip
 RUN pip install pafy \
     feedparser \
     toml \
-    requests-toolbelt
+    requests-toolbelt \
+    youtube_dl
 
 # Download application
 RUN wget https://github.com/mister-monster/YouTube2PeerTube/archive/master.zip && \
