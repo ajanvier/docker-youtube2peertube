@@ -33,7 +33,6 @@ Environment variables
 | **PEERTUBE_CHANNEL_NSFW** | Is this channel NSFW? | false |
 | **PEERTUBE_CHANNEL_COMMENTS_ENABLED** | Do you want comments enabled in this channel? | true |
 | **PEERTUBE_CHANNEL_PRIVACY** | 1 = public, 2 = unlisted, 3 = private, privacy for entire channel. | 1 |
-| **PEERTUBE_VIDEO_TAGS** | Tags to be added to uploaded video in Peertube, comma separated, max 5, between 2 and 30 char each (incomplete) |  |
 | **PEERTUBE_VIDEO_DESCRIPTION_PREFIX** | This description will be added to the beginning of the YT description. |  |
 | **PEERTUBE_VIDEO_DESCRIPTION_SUFFIX** | This description will be appended to the end of the YT description. |  |
 | **PEERTUBE_VIDEO_PREFERRED_EXTENSION** | Preferred extension of download and upload. | mp4 |
