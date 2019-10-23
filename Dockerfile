@@ -9,14 +9,13 @@ RUN pip install pafy \
     toml \
     requests-toolbelt
 
-# Create application dir
-RUN mkdir -p /app
-WORKDIR /app
-
 # Download application
 RUN wget https://github.com/mister-monster/YouTube2PeerTube/archive/master.zip && \
-    unzip master.zip && \
-    rm master.zip
+    unzip master.zip -d / && \
+    rm master.zip && \
+    mv /YouTube2PeerTube-master /app
+
+WORKDIR /app
 
 # Copying config
 COPY example_config.toml /app/config.toml
