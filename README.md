@@ -19,11 +19,11 @@ Environment variables
 
 | Name                         | Description                                                                  | Default value |
 | ---------------------------- |:-----------------------------------------------------------------------------| :-------------|
-| **VIDEO_DOWNLOAD_DIR** | Destination of the downloaded videos. | /videos  |
+| **VIDEO_DOWNLOAD_DIR** | Destination of the downloaded videos. (must end with a slash) | /videos/ |
 | **USE_PT_HTTP_IMPORT** | Peertube supports sending HTTP links to videos instead of downloading and uploading them. Use this option if you do not want to archive videos and have limited bandwidth. Setting this to true negates delete_videos as videos will not be downloaded, and disables transcoding. | false |
 | **DELETE_VIDEOS** | Delete videos and metadata after upload to peertube. | false |
 | **POLL_FREQUENCY** | Poll frequency in minutes. | 180 |
-| **YOUTUBE_CHANNEL_ID** | YT channel ID at the end of the URL `youtube.com/channel/<channel_id>` |  |
+| **YOUTUBE_CHANNEL_ID** | YT channel ID (can be found at https://www.youtube.com/account_advanced) |  |
 | **PEERTUBE_INSTANCE** | URL of PeerTube instance. |  |
 | **PEERTUBE_USERNAME** | Peertube username. |  |
 | **PEERTUBE_PASSWORD** | Peertube password. |  |
