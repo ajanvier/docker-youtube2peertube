@@ -1,5 +1,8 @@
-Youtube2Peertube on Alpine Linux with Docker
+:warning: THIS PROJECT IS NOT MAINTAINED ANYMORE :warning: 
 ==============================================
+
+Youtube2Peertube on Alpine Linux with Docker
+----
 ![Docker Build Status](https://img.shields.io/docker/build/ajanvier/youtube2peertube.svg)
 ![Docker Image Size](https://img.shields.io/microbadger/image-size/ajanvier/youtube2peertube.svg)
 
